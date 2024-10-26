@@ -1,0 +1,68 @@
+/* smaller tab */
+:root {
+  --tab-min-height: 28px !important;
+}
+
+.tab-label {
+  margin-block: 0 !important;
+}
+
+.tab-close-button {
+  width: 20px !important;
+  height: 20px !important;
+  padding: 4px !important;
+}
+
+/* remove shadow on active tab */
+#tabstoolbar #firefox-view-button[open] > .toolbarbutton-icon,
+.tab-background:is([selected], [multiselected]) {
+  box-shadow: none !important;
+}
+
+/* wider tab mask */
+.tabbrowser-tab {
+  --tab-label-mask-size: 4em !important;
+}
+
+/* tab audio icon */
+.tabbrowser-tab:not([pinned])
+  .tab-icon-stack:is([muted], [soundplaying], [activemedia-blocked]) {
+  grid-template-areas: "a s";
+}
+
+.tabbrowser-tab:not([pinned])
+  .tab-icon-overlay:is([muted], [soundplaying], [activemedia-blocked]) {
+  grid-area: s;
+}
+
+.tab-icon-overlay,
+.tab-icon-image,
+.tab-throbber {
+  opacity: 1 !important;
+}
+
+.tab-icon-overlay:not([pinned]) {
+  margin-inline: -2px 2px !important;
+}
+
+.tab-secondary-label {
+  display: none;
+}
+
+.tab-secondary-label[pictureinpicture] {
+  display: flex;
+}
+
+.tab-icon-overlay {
+  pointer-events: auto;
+}
+
+.tab-content > .tab-icon-stack,
+.tab-icon-stack:hover > .tab-icon-image {
+  visibility: visible;
+}
+
+/*  disable gradient border  */
+#appMenu-fxa-separator {
+  border-image: none !important;
+}
