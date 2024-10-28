@@ -66,3 +66,23 @@
 #appMenu-fxa-separator {
   border-image: none !important;
 }
+
+/*  dialog background color  */
+@media not (forced-colors) {
+  :root[dialogroot] {
+    --in-content-page-background: color-mix(
+      in srgb,
+      currentColor 5%,
+      -moz-Dialog
+    ) !important;
+  }
+}
+
+/* remove box shadow */
+#appcontent {
+  @media (-moz-bool-pref: "sidebar.revamp") {
+    & {
+      box-shadow: none !important;
+    }
+  }
+}
