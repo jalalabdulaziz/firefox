@@ -11,7 +11,7 @@ Custom firefox interface
 
 ## Browser Configuration:
 - Set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
-- Set `layout.css.has-selector.enabled` to `true`.
+- Set `widget.non-native-theme.scrollbar.style` to `2`.
 
 > [!NOTE]
 > For MacOS, set `browser.theme.macos.native-theme` to `true`.
