@@ -1,7 +1,7 @@
 # FirefoxCSS
 Custom firefox interface
 
-# How to install:
+## Installation:
 1. Download the files
 3. Go to `about:profiles`
 2. Find your profile
@@ -9,10 +9,9 @@ Custom firefox interface
 5. Move the files there
 6. Restart Firefox
 
-> [!NOTE]
-> `toolkit.legacyUserProfileCustomizations.stylesheets`
-> `layout.css.has-selector.enabled`
+## Browser Configuration:
+- Set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
+- Set `layout.css.has-selector.enabled` to `true`.
 
 > [!NOTE]
-> Enable for MacOS 
-> `browser.theme.macos.native-theme`
+> For MacOS, set `browser.theme.macos.native-theme` to `true`.
