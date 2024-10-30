@@ -1,4 +1,4 @@
-/* smaller tab */
+/* Smaller tab */
 :root {
   --tab-min-height: 28px !important;
 }
@@ -13,18 +13,18 @@
   padding: 4px !important;
 }
 
-/* remove shadow on active tab */
+/* Remove shadow on active tab */
 #tabstoolbar #firefox-view-button[open] > .toolbarbutton-icon,
 .tab-background:is([selected], [multiselected]) {
   box-shadow: none !important;
 }
 
-/* wider tab mask */
+/* Wider tab mask */
 .tabbrowser-tab {
   --tab-label-mask-size: 4em !important;
 }
 
-/* tab audio icon */
+/* Tab audio icon */
 .tabbrowser-tab:not([pinned])
   .tab-icon-stack:is([muted], [soundplaying], [activemedia-blocked]) {
   grid-template-areas: "a s";
@@ -62,12 +62,12 @@
   visibility: visible;
 }
 
-/*  disable gradient border  */
+/*  Disable gradient border  */
 #appMenu-fxa-separator {
   border-image: none !important;
 }
 
-/*  dialog background color  */
+/*  Dialog background color  */
 @media not (forced-colors) {
   :root[dialogroot] {
     --in-content-page-background: color-mix(
@@ -78,11 +78,17 @@
   }
 }
 
-/* remove box shadow */
+/* Remove box shadow */
 #appcontent {
   @media (-moz-bool-pref: "sidebar.revamp") {
     & {
       box-shadow: none !important;
+      border-inline-start: none !important;
     }
   }
+}
+
+/* Tab background color */
+#tabbrowser-tabpanels {
+  background: -moz-Dialog !important;
 }
