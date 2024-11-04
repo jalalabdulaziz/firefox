@@ -49,16 +49,18 @@
   &:not([crashed]) {
     &:is([soundplaying], [muted], [activemedia-blocked]) {
       fill: var(--tab-selected-textcolor) !important;
+      background-color: color-mix(
+        in srgb,
+        -moz-Dialog,
+        transparent 50%
+      ) !important;
+      backdrop-filter: blur(0.25rem);
     }
   }
 }
 
 .tab-secondary-label {
-  display: none;
-}
-
-.tab-secondary-label[pictureinpicture] {
-  display: flex;
+  display: none !important;
 }
 
 .tab-icon-overlay {
