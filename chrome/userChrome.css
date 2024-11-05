@@ -54,7 +54,6 @@
         -moz-Dialog,
         transparent 50%
       ) !important;
-      backdrop-filter: blur(0.25rem);
     }
   }
 }
