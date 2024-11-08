@@ -67,3 +67,9 @@
     -moz-Dialog
   ) !important;
 }
+
+@-moz-document url("about:home"),url("about:blank"),url("about:newtab"),url("about:privatebrowsing") {
+  body {
+    background-color: -moz-Dialog !important;
+  }
+}
