@@ -24,6 +24,11 @@
   --tab-label-mask-size: 4em !important;
 }
 
+/* Show close button on hover */
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  display: inline-flex !important;
+}
+
 /* Tab audio icon */
 .tabbrowser-tab:not([pinned])
   .tab-icon-stack:is([muted], [soundplaying], [activemedia-blocked]) {
