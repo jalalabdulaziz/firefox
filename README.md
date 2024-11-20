@@ -3,7 +3,7 @@ Custom firefox interface
 
 ## Installation:
 Copy `chrome` folder to profile's root directory
-Copy `user.js` folder to profile's root directory
+Copy `user.js` to profile's root directory
 
 ## Browser Configuration:
 - Set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
