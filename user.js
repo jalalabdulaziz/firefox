@@ -25,7 +25,8 @@ user_pref("browser.newtabpage.activity-stream.telemetry", false);
 /** MISC **/
 user_pref("extensions.pocket.enabled", false);
 user_pref("media.hardware-video-decoding.enabled", true);
-user_pref("media.av1.enabled", false);
+user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
