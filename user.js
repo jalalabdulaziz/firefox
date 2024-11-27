@@ -1,6 +1,6 @@
 /** UI **/
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-user_pref("browser.theme.macos.native-theme", true);
+user_pref("browser.theme.native-theme", true);
 user_pref("widget.non-native-theme.scrollbar.style", 2);
 user_pref("browser.aboutConfig.showWarning", false);
 
