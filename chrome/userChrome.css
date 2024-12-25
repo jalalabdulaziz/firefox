@@ -102,18 +102,20 @@
   }
 }
 
-/* Remove box shadow */
-#appcontent {
-  box-shadow: none !important;
-  border-inline-start: none !important;
-}
-
-#tabbrowser-tabbox {
-  box-shadow: none !important;
-  outline: none !important;
-}
-
 /* Tab background color */
 #tabbrowser-tabpanels {
   background: -moz-Dialog !important;
+}
+
+/* Private browsing label */
+.private-browsing-indicator-icon {
+  display: none !important;
+}
+
+.private-browsing-indicator-label {
+  background: #8000d7 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-block: 0 !important;
+  margin-inline: 0 !important;
 }
