@@ -39,3 +39,4 @@ user_pref("extensions.pocket.enabled", false);
 user_pref("sidebar.revamp", false);
 user_pref("media.hardware-video-decoding.enabled", true);
 user_pref("media.av1.enabled", false);
+user_pref("full-screen-api.warning.timeout", 1500);
