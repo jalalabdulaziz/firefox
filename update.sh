@@ -25,7 +25,7 @@ fi
 echo "Copying files to $PROFILE_DIR ..."
 
 # Use rsync to copy files
-rsync -av --exclude="update.sh" --exclude="README.md" --exclude=".git/" "$SOURCE_DIR/" "$PROFILE_DIR/"
+rsync -av --exclude="update.sh" --exclude=".DS_Store" --exclude="README.md" --exclude=".git/" "$SOURCE_DIR/" "$PROFILE_DIR/"
 
 # Check if the rsync command was successful
 if [ $? -eq 0 ]; then

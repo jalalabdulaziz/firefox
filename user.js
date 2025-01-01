@@ -28,6 +28,7 @@ user_pref("browser.startup.homepage", "about:newtab");
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.tabs.insertAfterCurrent", true);
 
 // Search & URL bar
 user_pref("browser.urlbar.trimHttps", true);
