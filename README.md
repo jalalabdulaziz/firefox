@@ -1,6 +1,6 @@
 # FirefoxCSS
 
-Custom firefox interface
+Custom firefox interface. Nothing fancy.
 
 ## Installation:
 
@@ -8,4 +8,4 @@ Custom firefox interface
 - Copy `user.js` to profile's root directory
 
 > [!TIP]
-> On macOS you can run `sh .update.sh`
+> On macOS you can run `sh update.sh`
