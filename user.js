@@ -31,9 +31,10 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.tabs.insertAfterCurrent", true);
 
 // Search & URL bar
-user_pref("browser.urlbar.trimHttps", true);
 user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.urlbar.trimHttps", true);
 user_pref("browser.urlbar.quicksuggest.enabled", false);
+user_pref("browser.urlbar.suggest.recentsearches", false);
 
 // Misc
 user_pref("extensions.pocket.enabled", false);
