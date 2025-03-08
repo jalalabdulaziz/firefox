@@ -3,7 +3,7 @@
   --tab-group-line-thickness: 1px !important;
 }
 
-/* Adjust window color */
+/* Adjust window color (macOS) */
 .browser-toolbox-background {
   @media (-moz-platform: macos) and (-moz-bool-pref: "browser.theme.native-theme") {
     :root[customtitlebar]:not([lwtheme], [macOSNativeFullscreen]) & {
@@ -14,6 +14,9 @@
 
 /* Tab group */
 .tab-group-label {
+  display: flex !important;
+  align-items: center;
+  gap: var(--tab-icon-end-margin);
   padding-inline: 8px !important;
   padding-block: 6px !important;
   margin-block: 0 !important;
@@ -27,6 +30,25 @@
     var(--tab-group-color-invert)
   ) !important;
   min-height: var(--tab-min-height) !important;
+}
+
+#tabbrowser-tabs[orient="horizontal"] .tab-group-label {
+  max-width: unset !important;
+}
+
+tab-group .tab-group-label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("chrome://global/skin/icons/folder.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  padding: 0;
+  align-self: center;
+  flex-shrink: 0;
 }
 
 .tab-group-label {
@@ -126,7 +148,7 @@
     --tab-group-line-thickness: 3px !important;
   }
 
-  /* Fix unnecessary (?) padding on the first pinned tab */
+  /* Remove unnecessary extra padding on the first pinned tab */
   #vertical-pinned-tabs-container .tabbrowser-tab {
     &:nth-child(1 of :not([hidden])) {
       padding-block-start: 3px !important;
@@ -135,20 +157,35 @@
 
   #nav-bar {
     border-top: none !important;
-  }
-
-  #nav-bar {
     padding-top: 2px !important;
   }
 
+  #PersonalToolbar {
+    margin-bottom: 2px;
+  }
+
   /* Rounded corner */
-  #tabbrowser-tabpanels::after {
+  #tabbrowser-tabpanels::before {
     content: "";
     inset: -10px;
     position: absolute;
     border: 10px solid var(--toolbox-bgcolor) !important;
     border-radius: calc(2 * var(--border-radius-medium)) !important;
     z-index: 1;
+    pointer-events: none;
+  }
+
+  #tabbrowser-tabpanels::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    border: 0.5px solid
+      light-dark(
+        color-mix(in srgb, currentColor 10%, transparent),
+        var(--border-color-deemphasized)
+      ) !important;
+    border-radius: 6px !important;
+    z-index: 2 !important;
     pointer-events: none;
   }
 
@@ -165,8 +202,7 @@
   }
 
   #vertical-tabs tab .tab-background,
-  #tabs-newtab-button,
-  .button-background {
+  #tabs-newtab-button {
     border-radius: var(--tab-border-radius) !important;
   }
 
@@ -202,29 +238,11 @@
   }
 
   .tab-group-label {
-    display: flex !important;
-    align-items: center;
-    gap: var(--tab-icon-end-margin);
     margin-block: 0 !important;
     padding-block: 0 !important;
     width: 100% !important;
     margin-inline: var(--tab-inner-inline-margin) !important;
     min-width: var(--tab-collapsed-background-width) !important;
-  }
-
-  tab-group .tab-group-label::before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    background-image: url("chrome://global/skin/icons/folder.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    -moz-context-properties: fill;
-    fill: currentColor;
-    padding: 0;
-    align-self: center;
-    flex-shrink: 0;
   }
 
   tab-group[collapsed] .tab-group-label::before {
