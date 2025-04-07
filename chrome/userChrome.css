@@ -5,7 +5,7 @@
 
 /* Adjust window color (macOS) */
 .browser-toolbox-background {
-  @media (-moz-platform: macos) and (-moz-bool-pref: "browser.theme.native-theme") {
+  @media (-moz-platform: macos) and -moz-pref("browser.theme.native-theme") {
     :root[customtitlebar]:not([lwtheme], [macOSNativeFullscreen]) & {
       background-color: var(--toolbox-bgcolor) !important;
     }
@@ -142,7 +142,7 @@ tab-group .tab-group-label::before {
 }
 
 /* Vertical tab */
-@media (-moz-bool-pref: "sidebar.verticalTabs") {
+@media -moz-pref("sidebar.verticalTabs") {
   :root {
     --tab-min-height: 32px !important;
     --tab-group-line-thickness: 3px !important;
