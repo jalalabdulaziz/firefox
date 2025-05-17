@@ -284,6 +284,8 @@ tab-group .tab-group-label::before {
       .tabbrowser-tab:last-of-type > .tab-stack > .tab-background > & {
         border-radius: 0 0 3px 0 !important;
       }
+      left: 0 !important;
     }
+  }
   }
 }
