@@ -170,7 +170,6 @@ tab-group .tab-group-label::before {
     inset: -10px;
     position: absolute;
     border: 10px solid var(--toolbox-bgcolor) !important;
-    border-radius: calc(2 * var(--border-radius-medium)) !important;
     z-index: 1;
     pointer-events: none;
   }
@@ -179,22 +178,32 @@ tab-group .tab-group-label::before {
     content: "";
     inset: 0;
     position: absolute;
-    border: 0.5px solid
-      light-dark(
-        color-mix(in srgb, currentColor 10%, transparent),
-        var(--border-color-deemphasized)
-      ) !important;
-    border-radius: 6px !important;
     z-index: 2 !important;
     pointer-events: none;
   }
 
-  #tabbrowser-tabbox {
-    box-shadow: none !important;
-    outline: none !important;
-    padding-bottom: 6px !important;
-    padding-right: 6px !important;
-    overflow: hidden !important;
+  /* when youtube full screen */
+  #main-window:not([inFullscreen][inDOMFullscreen]) {
+    #tabbrowser-tabbox {
+      box-shadow: none !important;
+      outline: none !important;
+      padding-bottom: 6px !important;
+      padding-right: 6px !important;
+      overflow: hidden !important;
+    }
+
+    #tabbrowser-tabpanels::after {
+      border: 0.5px solid
+        light-dark(
+          color-mix(in srgb, currentColor 10%, transparent),
+          var(--border-color-deemphasized)
+        ) !important;
+      border-radius: 6px !important;
+    }
+
+    #tabbrowser-tabpanels::before {
+      border-radius: calc(2 * var(--border-radius-medium)) !important;
+    }
   }
 
   #vertical-tabs tab:not([pinned]) .tab-background {
@@ -216,25 +225,17 @@ tab-group .tab-group-label::before {
     #tabbrowser-tabs[expanded] & {
       margin-inline-start: 0 !important;
     }
-    #tabbrowser-tabs[expanded] & {
-      &:not([collapsed])::before {
-        inset-block-start: 0 !important;
-      }
-    }
   }
 
-  tab-group::before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset-block: 0;
-    inset-inline-start: 0 !important;
-    width: var(--tab-group-line-thickness);
-    background-color: light-dark(
-      var(--tab-group-color),
-      var(--tab-group-color-invert)
-    );
-    border-radius: 0 var(--tab-border-radius) var(--tab-border-radius) 0 !important;
+  #tabbrowser-tabs[orient="vertical"][expanded] {
+    tab-group > :is(.tab-group-label-container, .tabbrowser-tab),
+    &[movingtab][movingtab-addToGroup]:not(
+        [movingtab-createGroup],
+        [movingtab-ungroup]
+      )
+      .tabbrowser-tab:is(:active, [multiselected]) {
+      margin-inline-start: 0 !important;
+    }
   }
 
   .tab-group-label {
@@ -263,7 +264,26 @@ tab-group .tab-group-label::before {
     margin-inline: auto 4px;
   }
 
-  tab-group .tabbrowser-tab:first-of-type {
-    margin-top: 2px !important;
+  .tab-group-label-container {
+    #tabbrowser-tabs:is([orient="horizontal"], [orient="vertical"])
+      tab-group
+      > &::after {
+      content: "" !important;
+      background-color: light-dark(
+        var(--tab-group-color),
+        var(--tab-group-color-invert)
+      ) !important;
+      position: absolute !important;
+      left: 0 !important;
+      border-radius: 0 3px 0 0 !important;
+    }
+  }
+
+  .tab-group-line {
+    #tabbrowser-tabs[orient="vertical"] & {
+      .tabbrowser-tab:last-of-type > .tab-stack > .tab-background > & {
+        border-radius: 0 0 3px 0 !important;
+      }
+    }
   }
 }
